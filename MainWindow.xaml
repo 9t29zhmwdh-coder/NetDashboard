@@ -111,7 +111,7 @@
             <Setter Property="VerticalContentAlignment" Value="Top"/>
         </Style>
         <Style x:Key="Busy" TargetType="TextBlock">
-            <Setter Property="Text" Value="⏳ läuft…"/>
+            <Setter Property="Text" Value="⏳ …"/>
             <Setter Property="Foreground" Value="#FBBF24"/>
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -127,23 +127,37 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Titel mit Logo -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,12">
-            <Border Background="White" CornerRadius="8" Padding="6" Margin="0,0,14,0" VerticalAlignment="Center">
-                <Image Source="pack://application:,,,/RayStudio.png" Width="52" Height="52" Stretch="Uniform"/>
-            </Border>
-            <StackPanel VerticalAlignment="Center">
-                <TextBlock Text="NetDashboard" Foreground="#F1F5F9" FontSize="24" FontWeight="SemiBold"/>
-                <TextBlock Text="Netzwerk- &amp; Mail-Toolkit  ·  by RayStudio" Foreground="#64748B" FontSize="13"/>
+        <!-- Titel mit Logo + Sprachumschalter -->
+        <Grid Grid.Row="0" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Border Background="White" CornerRadius="8" Padding="6" Margin="0,0,14,0" VerticalAlignment="Center">
+                    <Image Source="pack://application:,,,/RayStudio.png" Width="52" Height="52" Stretch="Uniform"/>
+                </Border>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="NetDashboard" Foreground="#F1F5F9" FontSize="24" FontWeight="SemiBold"/>
+                    <TextBlock x:Name="Subtitle" Foreground="#64748B" FontSize="13"/>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Text="🌐" FontSize="16" Foreground="#CBD5E1" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                <ComboBox x:Name="LangSelector" Width="130" Height="32" VerticalAlignment="Center"
+                          FontSize="13" SelectionChanged="LangSelector_SelectionChanged">
+                    <ComboBoxItem Tag="de" Content="Deutsch"/>
+                    <ComboBoxItem Tag="en" Content="English"/>
+                    <ComboBoxItem Tag="fr" Content="Français"/>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
 
-        <!-- Resolver-Auswahl (zentral, gilt für alle) -->
+        <!-- Resolver-Auswahl -->
         <Border Grid.Row="1" Background="#162033" CornerRadius="10" Padding="14" Margin="0,0,0,12">
             <StackPanel>
-                <TextBlock Text="DNS-Resolver für den Vergleich" Style="{StaticResource CardTitle}"/>
-                <TextBlock Style="{StaticResource CardHint}"
-                           Text="Mehrere anhaken = Kontrolle. Fällt ein Dienst aus oder antwortet falsch, erkennst du es durch den Vergleich. Gilt für Mail-Check und DNS-Check."/>
+                <TextBlock x:Name="ResolverTitle" Style="{StaticResource CardTitle}"/>
+                <TextBlock x:Name="ResolverHint" Style="{StaticResource CardHint}"/>
                 <StackPanel Orientation="Horizontal">
                     <CheckBox x:Name="ChkGoogle" Content="Google (8.8.8.8)" IsChecked="True"/>
                     <CheckBox x:Name="ChkCloudflare" Content="Cloudflare (1.1.1.1)" IsChecked="True"/>
@@ -155,8 +169,7 @@
         <!-- TABS -->
         <TabControl Grid.Row="2" Background="Transparent" BorderThickness="0">
 
-            <!-- TAB: Mail-Check -->
-            <TabItem Header="📧 Mail-Check">
+            <TabItem x:Name="TabMail">
                 <Grid Margin="0,8,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -164,18 +177,16 @@
                     </Grid.RowDefinitions>
                     <Border Grid.Row="0" Background="#162033" CornerRadius="10" Padding="16">
                         <StackPanel>
-                            <TextBlock Text="Mail-Einstellungen herausfinden" Style="{StaticResource CardTitle}"/>
-                            <TextBlock Style="{StaticResource CardHint}"
-                                       Text="Du kennst nur deine E-Mail-Adresse, aber nicht die Server-Einstellungen? Adresse eingeben und auf 'Prüfen' klicken – das Tool findet den Mailserver, erkennt den Anbieter und zeigt die passenden IMAP-/SMTP-Werte."/>
-                            <TextBlock Text="E-Mail-Adresse" Style="{StaticResource FieldLabel}"/>
+                            <TextBlock x:Name="MailCardTitle" Style="{StaticResource CardTitle}"/>
+                            <TextBlock x:Name="MailCardHint" Style="{StaticResource CardHint}"/>
+                            <TextBlock x:Name="MailLabel" Style="{StaticResource FieldLabel}"/>
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBox x:Name="MailEmailInput" Grid.Column="0" Text="name@firma.ch" Margin="0,0,8,0"/>
-                                <Button Grid.Column="1" Style="{StaticResource BtnMail}" Margin="0"
-                                        Content="✓ Prüfen" Click="MailCheck_Click"/>
+                                <Button x:Name="MailCheckBtn" Grid.Column="1" Style="{StaticResource BtnMail}" Margin="0" Click="MailCheck_Click"/>
                             </Grid>
                         </StackPanel>
                     </Border>
@@ -184,16 +195,15 @@
                             <TextBox x:Name="MailOutput" Style="{StaticResource Console}"/>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,8,12,0">
                                 <TextBlock x:Name="MailBusy" Style="{StaticResource Busy}"/>
-                                <Button Style="{StaticResource BtnSystem}" Margin="0,0,8,0" Content="📋 Kopieren" Tag="{Binding ElementName=MailOutput}" Click="Copy_Click"/>
-                                <Button Style="{StaticResource BtnSystem}" Margin="0" Content="🗑 Leeren" Tag="{Binding ElementName=MailOutput}" Click="Clear_Click"/>
+                                <Button x:Name="MailCopy" Style="{StaticResource BtnSystem}" Margin="0,0,8,0" Tag="{Binding ElementName=MailOutput}" Click="Copy_Click"/>
+                                <Button x:Name="MailClear" Style="{StaticResource BtnSystem}" Margin="0" Tag="{Binding ElementName=MailOutput}" Click="Clear_Click"/>
                             </StackPanel>
                         </Grid>
                     </Border>
                 </Grid>
             </TabItem>
 
-            <!-- TAB: DNS-Check -->
-            <TabItem Header="🔍 DNS-Check">
+            <TabItem x:Name="TabDns">
                 <Grid Margin="0,8,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -201,21 +211,20 @@
                     </Grid.RowDefinitions>
                     <Border Grid.Row="0" Background="#162033" CornerRadius="10" Padding="16">
                         <StackPanel>
-                            <TextBlock Text="DNS-Einträge prüfen (für Support)" Style="{StaticResource CardTitle}"/>
-                            <TextBlock Style="{StaticResource CardHint}"
-                                       Text="Domain oder IP eingeben und Abfrage wählen. Läuft über alle oben ausgewählten Resolver – so siehst du sofort, ob alle dasselbe liefern."/>
-                            <TextBlock Text="Domain oder IP-Adresse" Style="{StaticResource FieldLabel}"/>
+                            <TextBlock x:Name="DnsCardTitle" Style="{StaticResource CardTitle}"/>
+                            <TextBlock x:Name="DnsCardHint" Style="{StaticResource CardHint}"/>
+                            <TextBlock x:Name="DnsLabel" Style="{StaticResource FieldLabel}"/>
                             <TextBox x:Name="HostInput" Text="example.com" Margin="0,0,0,12"/>
                             <WrapPanel>
-                                <Button Style="{StaticResource BtnDomain}" Tag="A"     Content="IPv4 (A)"        Click="DnsType_Click" ToolTip="IPv4-Adresse der Domain."/>
-                                <Button Style="{StaticResource BtnDomain}" Tag="AAAA"  Content="IPv6 (AAAA)"     Click="DnsType_Click" ToolTip="IPv6-Adresse der Domain."/>
-                                <Button Style="{StaticResource BtnDomain}" Tag="MX"    Content="Mailserver (MX)" Click="DnsType_Click" ToolTip="Welche Server E-Mails annehmen."/>
-                                <Button Style="{StaticResource BtnDomain}" Tag="TXT"   Content="Text (TXT)"      Click="DnsType_Click" ToolTip="z. B. SPF/DKIM."/>
-                                <Button Style="{StaticResource BtnDomain}" Tag="NS"    Content="Nameserver (NS)" Click="DnsType_Click" ToolTip="Zuständige DNS-Server."/>
-                                <Button Style="{StaticResource BtnDomain}" Tag="CNAME" Content="Alias (CNAME)"   Click="DnsType_Click" ToolTip="Verweis auf andere Domain."/>
-                                <Button Style="{StaticResource BtnDomain}" Tag="SOA"   Content="Zonen-Info (SOA)" Click="DnsType_Click" ToolTip="Verwaltungsdaten der Zone."/>
-                                <Button Style="{StaticResource BtnDomain}" Tag="ALL"   Content="Alle Records"    Click="DnsType_Click" ToolTip="Alle Einträge auf einmal."/>
-                                <Button Style="{StaticResource BtnDomain}" Tag="PTR"   Content="Reverse (PTR)"   Click="DnsType_Click" ToolTip="Name zu einer IP-Adresse."/>
+                                <Button x:Name="BtnA"     Style="{StaticResource BtnDomain}" Tag="A"     Click="DnsType_Click"/>
+                                <Button x:Name="BtnAAAA"  Style="{StaticResource BtnDomain}" Tag="AAAA"  Click="DnsType_Click"/>
+                                <Button x:Name="BtnMX"    Style="{StaticResource BtnDomain}" Tag="MX"    Click="DnsType_Click"/>
+                                <Button x:Name="BtnTXT"   Style="{StaticResource BtnDomain}" Tag="TXT"   Click="DnsType_Click"/>
+                                <Button x:Name="BtnNS"    Style="{StaticResource BtnDomain}" Tag="NS"    Click="DnsType_Click"/>
+                                <Button x:Name="BtnCNAME" Style="{StaticResource BtnDomain}" Tag="CNAME" Click="DnsType_Click"/>
+                                <Button x:Name="BtnSOA"   Style="{StaticResource BtnDomain}" Tag="SOA"   Click="DnsType_Click"/>
+                                <Button x:Name="BtnALL"   Style="{StaticResource BtnDomain}" Tag="ALL"   Click="DnsType_Click"/>
+                                <Button x:Name="BtnPTR"   Style="{StaticResource BtnDomain}" Tag="PTR"   Click="DnsType_Click"/>
                             </WrapPanel>
                         </StackPanel>
                     </Border>
@@ -224,16 +233,15 @@
                             <TextBox x:Name="DnsOutput" Style="{StaticResource Console}"/>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,8,12,0">
                                 <TextBlock x:Name="DnsBusy" Style="{StaticResource Busy}"/>
-                                <Button Style="{StaticResource BtnSystem}" Margin="0,0,8,0" Content="📋 Kopieren" Tag="{Binding ElementName=DnsOutput}" Click="Copy_Click"/>
-                                <Button Style="{StaticResource BtnSystem}" Margin="0" Content="🗑 Leeren" Tag="{Binding ElementName=DnsOutput}" Click="Clear_Click"/>
+                                <Button x:Name="DnsCopy" Style="{StaticResource BtnSystem}" Margin="0,0,8,0" Tag="{Binding ElementName=DnsOutput}" Click="Copy_Click"/>
+                                <Button x:Name="DnsClear" Style="{StaticResource BtnSystem}" Margin="0" Tag="{Binding ElementName=DnsOutput}" Click="Clear_Click"/>
                             </StackPanel>
                         </Grid>
                     </Border>
                 </Grid>
             </TabItem>
 
-            <!-- TAB: Verbindung -->
-            <TabItem Header="🔌 Verbindung">
+            <TabItem x:Name="TabConn">
                 <Grid Margin="0,8,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -241,27 +249,26 @@
                     </Grid.RowDefinitions>
                     <Border Grid.Row="0" Background="#162033" CornerRadius="10" Padding="16">
                         <StackPanel>
-                            <TextBlock Text="Erreichbarkeit &amp; Ports testen" Style="{StaticResource CardTitle}"/>
-                            <TextBlock Style="{StaticResource CardHint}"
-                                       Text="Prüft, ob ein Ziel antwortet (Ping), ob ein Port offen ist (443 = HTTPS, 993 = IMAP, 587 = SMTP) und welchen Weg die Daten nehmen (Route)."/>
+                            <TextBlock x:Name="ConnCardTitle" Style="{StaticResource CardTitle}"/>
+                            <TextBlock x:Name="ConnCardHint" Style="{StaticResource CardHint}"/>
                             <Grid Margin="0,0,0,12">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="2*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Column="0" Margin="0,0,8,0">
-                                    <TextBlock Text="Ziel (Domain oder IP)" Style="{StaticResource FieldLabel}"/>
+                                    <TextBlock x:Name="ConnTargetLabel" Style="{StaticResource FieldLabel}"/>
                                     <TextBox x:Name="TargetInput" Text="example.com"/>
                                 </StackPanel>
                                 <StackPanel Grid.Column="1" Margin="8,0,0,0">
-                                    <TextBlock Text="Port" Style="{StaticResource FieldLabel}"/>
+                                    <TextBlock x:Name="PortLabel" Style="{StaticResource FieldLabel}"/>
                                     <TextBox x:Name="PortInput" Text="443"/>
                                 </StackPanel>
                             </Grid>
                             <WrapPanel>
-                                <Button Style="{StaticResource BtnConn}" Content="Ping (Erreichbarkeit)" Click="Ping_Click" ToolTip="Antwortet das Ziel?"/>
-                                <Button Style="{StaticResource BtnConn}" Content="Port-Test" Click="PortTest_Click" ToolTip="Ist der angegebene Port offen?"/>
-                                <Button Style="{StaticResource BtnConn}" Content="Route / Tracert" Click="TraceRoute_Click" ToolTip="Weg der Datenpakete (dauert etwas)."/>
+                                <Button x:Name="BtnPing" Style="{StaticResource BtnConn}" Click="Ping_Click"/>
+                                <Button x:Name="BtnPort" Style="{StaticResource BtnConn}" Click="PortTest_Click"/>
+                                <Button x:Name="BtnTrace" Style="{StaticResource BtnConn}" Click="TraceRoute_Click"/>
                             </WrapPanel>
                         </StackPanel>
                     </Border>
@@ -270,16 +277,15 @@
                             <TextBox x:Name="ConnOutput" Style="{StaticResource Console}"/>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,8,12,0">
                                 <TextBlock x:Name="ConnBusy" Style="{StaticResource Busy}"/>
-                                <Button Style="{StaticResource BtnSystem}" Margin="0,0,8,0" Content="📋 Kopieren" Tag="{Binding ElementName=ConnOutput}" Click="Copy_Click"/>
-                                <Button Style="{StaticResource BtnSystem}" Margin="0" Content="🗑 Leeren" Tag="{Binding ElementName=ConnOutput}" Click="Clear_Click"/>
+                                <Button x:Name="ConnCopy" Style="{StaticResource BtnSystem}" Margin="0,0,8,0" Tag="{Binding ElementName=ConnOutput}" Click="Copy_Click"/>
+                                <Button x:Name="ConnClear" Style="{StaticResource BtnSystem}" Margin="0" Tag="{Binding ElementName=ConnOutput}" Click="Clear_Click"/>
                             </StackPanel>
                         </Grid>
                     </Border>
                 </Grid>
             </TabItem>
 
-            <!-- TAB: Mein System -->
-            <TabItem Header="💻 Mein System">
+            <TabItem x:Name="TabSys">
                 <Grid Margin="0,8,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -287,16 +293,16 @@
                     </Grid.RowDefinitions>
                     <Border Grid.Row="0" Background="#162033" CornerRadius="10" Padding="16">
                         <StackPanel>
-                            <TextBlock Text="Infos über deinen PC &amp; dein Netzwerk" Style="{StaticResource CardTitle}"/>
-                            <TextBlock Style="{StaticResource CardHint}" Text="Keine Eingabe nötig – einfach auf eine Schaltfläche klicken."/>
+                            <TextBlock x:Name="SysCardTitle" Style="{StaticResource CardTitle}"/>
+                            <TextBlock x:Name="SysCardHint" Style="{StaticResource CardHint}"/>
                             <WrapPanel>
-                                <Button Style="{StaticResource BtnSystem}" Content="IP-Konfiguration" Click="IpConfig_Click" ToolTip="Deine eigenen Netzwerk-Adressen."/>
-                                <Button Style="{StaticResource BtnSystem}" Content="Aktive DNS-Server" Click="DnsServers_Click" ToolTip="Welche DNS-Server dein PC nutzt."/>
-                                <Button Style="{StaticResource BtnSystem}" Content="DNS-Cache anzeigen" Click="DnsCacheShow_Click" ToolTip="Zwischengespeicherte DNS-Einträge."/>
-                                <Button Style="{StaticResource BtnSystem}" Content="DNS-Cache leeren" Click="DnsCacheFlush_Click" ToolTip="Hilft bei DNS-Problemen."/>
-                                <Button Style="{StaticResource BtnSystem}" Content="ARP-Tabelle" Click="Arp_Click" ToolTip="Geräte im lokalen Netz."/>
-                                <Button Style="{StaticResource BtnSystem}" Content="Routing-Tabelle" Click="Route_Click" ToolTip="Wie dein PC Pakete weiterleitet."/>
-                                <Button Style="{StaticResource BtnSystem}" Content="Öffentliche IP" Click="PublicIp_Click" ToolTip="Deine Internet-IP von außen."/>
+                                <Button x:Name="BtnIpcfg" Style="{StaticResource BtnSystem}" Click="IpConfig_Click"/>
+                                <Button x:Name="BtnDnsSrv" Style="{StaticResource BtnSystem}" Click="DnsServers_Click"/>
+                                <Button x:Name="BtnCacheShow" Style="{StaticResource BtnSystem}" Click="DnsCacheShow_Click"/>
+                                <Button x:Name="BtnCacheFlush" Style="{StaticResource BtnSystem}" Click="DnsCacheFlush_Click"/>
+                                <Button x:Name="BtnArp" Style="{StaticResource BtnSystem}" Click="Arp_Click"/>
+                                <Button x:Name="BtnRoute" Style="{StaticResource BtnSystem}" Click="Route_Click"/>
+                                <Button x:Name="BtnPublicIp" Style="{StaticResource BtnSystem}" Click="PublicIp_Click"/>
                             </WrapPanel>
                         </StackPanel>
                     </Border>
@@ -305,27 +311,17 @@
                             <TextBox x:Name="SysOutput" Style="{StaticResource Console}"/>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,8,12,0">
                                 <TextBlock x:Name="SysBusy" Style="{StaticResource Busy}"/>
-                                <Button Style="{StaticResource BtnSystem}" Margin="0,0,8,0" Content="📋 Kopieren" Tag="{Binding ElementName=SysOutput}" Click="Copy_Click"/>
-                                <Button Style="{StaticResource BtnSystem}" Margin="0" Content="🗑 Leeren" Tag="{Binding ElementName=SysOutput}" Click="Clear_Click"/>
+                                <Button x:Name="SysCopy" Style="{StaticResource BtnSystem}" Margin="0,0,8,0" Tag="{Binding ElementName=SysOutput}" Click="Copy_Click"/>
+                                <Button x:Name="SysClear" Style="{StaticResource BtnSystem}" Margin="0" Tag="{Binding ElementName=SysOutput}" Click="Clear_Click"/>
                             </StackPanel>
                         </Grid>
                     </Border>
                 </Grid>
             </TabItem>
 
-            <!-- TAB: Hilfe -->
-            <TabItem Header="ℹ️ Hilfe">
+            <TabItem x:Name="TabHelp">
                 <Border Background="#162033" CornerRadius="10" Padding="16" Margin="0,8,0,0">
-                    <TextBlock Foreground="#CBD5E1" FontSize="13" TextWrapping="Wrap">
-                        <Run FontWeight="Bold" Foreground="#F1F5F9" Text="Warum mehrere DNS-Resolver?"/><LineBreak/>
-                        DNS ist das „Telefonbuch" des Internets. Es gibt mehrere öffentliche Auskünfte (Resolver):
-                        Google (8.8.8.8), Cloudflare (1.1.1.1) und Quad9 (9.9.9.9). Das Tool fragt mehrere gleichzeitig und vergleicht.<LineBreak/>
-                        • Alle gleich → alles in Ordnung.<LineBreak/>
-                        • Unterschiede → Umstellung läuft, ein Resolver hat ein Problem, oder ein Eintrag ist veraltet.<LineBreak/>
-                        Fällt ein Resolver aus, siehst du dank der anderen trotzdem ein Ergebnis.<LineBreak/><LineBreak/>
-                        <Run FontWeight="Bold" Foreground="#F1F5F9" Text="MX / SPF kurz erklärt:"/><LineBreak/>
-                        MX = die Server, die E-Mails für eine Domain annehmen. SPF = legt fest, welche Server im Namen der Domain senden dürfen (Schutz vor Fälschungen).
-                    </TextBlock>
+                    <TextBlock x:Name="HelpText" Foreground="#CBD5E1" FontSize="13" TextWrapping="Wrap"/>
                 </Border>
             </TabItem>
         </TabControl>
