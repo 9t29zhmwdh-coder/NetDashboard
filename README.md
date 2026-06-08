@@ -11,6 +11,10 @@
 - **Verbindung** — Netzwerkverbindung prüfen und diagnostizieren
 - **Mein System** — Systeminformationen auf einen Blick
 
+## Sprachen / Languages / Langues
+
+🇩🇪 Deutsch &nbsp;|&nbsp; 🇬🇧 English &nbsp;|&nbsp; 🇫🇷 Français
+
 ## Voraussetzungen
 
 - Windows 10/11
