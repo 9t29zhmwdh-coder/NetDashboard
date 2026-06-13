@@ -48,7 +48,3 @@ Die Sprache ist direkt in der App umschaltbar — kein Neustart nötig.
 
 ---
 
-<div align="right">
-  <sub>by</sub><br/>
-  <img src="RayStudio.png" alt="RayStudio" width="70"/>
-</div>
