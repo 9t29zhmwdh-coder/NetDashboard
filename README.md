@@ -11,6 +11,8 @@
   ![NetDashboard Screenshot](screenshot.png)
 </div>
 
+[🇩🇪 Deutsche Version](README.de.md)
+
 ---
 
 ## Features
