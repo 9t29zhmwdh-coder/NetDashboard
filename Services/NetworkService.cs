@@ -246,7 +246,7 @@ public class NetworkService
 
         process.OutputDataReceived += (_, e) => { if (e.Data != null) sb.AppendLine(e.Data); };
         process.ErrorDataReceived += (_, e) => { if (e.Data != null) sb.AppendLine(e.Data); };
-        process.Exited += (_, _) => { tcs.TrySetResult(sb.ToString()); process.Dispose(); };
+        process.Exited += (_, _) => { process.WaitForExit(); tcs.TrySetResult(sb.ToString()); process.Dispose(); };
 
         try
         {
