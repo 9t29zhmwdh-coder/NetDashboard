@@ -3,28 +3,45 @@
   <h1>NetDashboard</h1>
 </div>
 
-[🇬🇧 English Version](README.md)
+> 🇬🇧 [English Version](README.md)
 
 **Netzwerk- & Mail-Toolkit für Windows — C# · WPF · .NET 8**
 
-NetDashboard ist ein kompaktes Windows-Werkzeug, das DNS-Abfragen, E-Mail-Server-Erkennung, Netzwerkdiagnose und Systeminformationen in einer einzigen Dark-Theme-Oberfläche vereint.
+NetDashboard ist ein kompaktes Windows-Werkzeug, das DNS-Abfragen, E-Mail-Server-Erkennung, Netzwerkdiagnose und Systeminformationen in einer einzigen Dark-Theme-Oberfläche vereint — mit vollständiger dreisprachiger UI.
 
-![Windows](https://img.shields.io/badge/Windows-10%2F11-0078D4?logo=windows)
-![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet)
-![License](https://img.shields.io/badge/License-MIT-green)
+![Windows](https://img.shields.io/badge/Windows-10%2F11-lightgrey?logo=windows)
+![.NET](https://img.shields.io/badge/.NET-8.0-orange?logo=dotnet)
+![Language](https://img.shields.io/badge/Sprache-DE%20%7C%20EN%20%7C%20FR-lightgrey)
+[![CI](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/ci.yml)
 
 ---
 
 ## Funktionen
 
 | Tab | Funktion |
-|---|---|
+|-----|----------|
 | **Mail-Check** | E-Mail-Adresse eingeben → IMAP- & SMTP-Server automatisch per DNS ermitteln |
 | **DNS-Check** | Abfragen für A, AAAA, MX, TXT, NS, CNAME, SOA, PTR und ALL — parallel über bis zu 3 Resolver |
 | **Verbindung** | Ping, Port-Test und Traceroute zu beliebigen Hosts |
 | **Mein System** | IP-Konfiguration, DNS-Server, DNS-Cache anzeigen/leeren, ARP-Tabelle, Routing-Tabelle, öffentliche IP |
 
 **DNS-Resolver** wählbar: Google (8.8.8.8) · Cloudflare (1.1.1.1) · Quad9 (9.9.9.9)
+
+---
+
+## Microsoft 365 / Exchange Online Anwendungsfälle
+
+NetDashboard ist besonders nützlich in Microsoft 365- und Exchange Online-Umgebungen:
+
+| Szenario | Vorgehensweise |
+|----------|----------------|
+| **M365-Mail-Setup prüfen** | MX-Record für `deinedomain.ch` abfragen — Exchange Online-Routing bestätigen |
+| **SPF / DKIM / DMARC Audit** | TXT-Record-Abfrage zeigt SPF-Policy, DKIM-Selektoren und DMARC-Enforcement |
+| **Autodiscover-Validierung** | CNAME `autodiscover.deinedomain.ch` → `autodiscover.outlook.com` prüfen |
+| **Teams / SIP SRV-Records** | DNS-Check → ALL für Teams Direct Routing SRV-Records |
+| **MX-Priorität prüfen** | MX-Prioritätsreihenfolge für hybrides Exchange-Routing verifizieren |
+| **Spam-Filter-Bypass** | Alle TXT-Records prüfen — Drittanbieter-Filter in SPF enthalten? |
+| **Connector-Fehlerbehebung** | SMTP-Banner und Port-Verfügbarkeit zu Exchange Online IPs testen |
 
 ---
 
@@ -43,20 +60,28 @@ Die Sprache ist direkt in der App umschaltbar — kein Neustart nötig.
 
 ---
 
-## Installation
+## Erste Schritte
 
-1. .NET 8 Runtime installieren (falls nicht vorhanden)
-2. Release herunterladen
-3. `NetDashboard.exe` starten — kein Installer erforderlich
+```bash
+# Build aus dem Quellcode
+dotnet build NetDashboard.csproj --configuration Release
 
----
+# Ausführen
+dotnet run --project NetDashboard.csproj
+```
 
-## Datenschutz
-
-- Keine Telemetrie, keine Cloud-Verbindungen
-- Alle DNS-Abfragen laufen direkt über die konfigurierten Resolver
-- Keine Daten werden gespeichert oder übertragen
+Oder aktuellen Release herunterladen und `NetDashboard.exe` starten — kein Installer erforderlich.
 
 ---
 
-**Author:** [Rafael Yilmaz](https://github.com/9t29zhmwdh-coder) · **Status:** Active Development · **Last Updated:** Juni 2026
+## Technologien
+
+- **Sprache:** C# 12
+- **Framework:** WPF / .NET 8
+- **UI:** Dark-Theme, MVVM-Muster
+- **DNS:** System.Net.Dns + roher UDP-Resolver
+- **Keine externen Abhängigkeiten** — vollständig offline nach dem Start
+
+---
+
+**Autor:** [Rafael Yilmaz](https://github.com/9t29zhmwdh-coder) &nbsp;·&nbsp; **Status:** Aktiv &nbsp;·&nbsp; **Letzte Aktualisierung:** Juni 2026
