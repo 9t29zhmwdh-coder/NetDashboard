@@ -4,9 +4,9 @@
   <h1>NetDashboard</h1>
   <p><strong>Netzwerk- & Mail-Toolkit für Windows</strong></p>
 
-  ![Windows](https://img.shields.io/badge/Windows-10%2F11-0078D4?style=flat-square&logo=windows)
-  ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=flat-square&logo=dotnet)
-  ![Language](https://img.shields.io/badge/Sprache-DE%20%7C%20EN%20%7C%20FR-4B5563?style=flat-square)
+  ![Windows](https://img.shields.io/badge/Windows-10%2F11-lightgrey?logo=windows)
+  ![.NET](https://img.shields.io/badge/.NET-8.0-orange?logo=dotnet)
+  ![Language](https://img.shields.io/badge/Sprache-DE%20%7C%20EN%20%7C%20FR-lightgrey)
 
   ![NetDashboard Screenshot](screenshot.png)
 </div>
