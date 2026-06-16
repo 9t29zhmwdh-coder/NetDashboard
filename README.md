@@ -7,6 +7,7 @@
   ![Windows](https://img.shields.io/badge/Windows-10%2F11-lightgrey?logo=windows)
   ![.NET](https://img.shields.io/badge/.NET-8.0-orange?logo=dotnet)
   ![Language](https://img.shields.io/badge/Sprache-DE%20%7C%20EN%20%7C%20FR-lightgrey)
+  [![CI](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/ci.yml)
 
   ![NetDashboard Screenshot](screenshot.png)
 </div>
