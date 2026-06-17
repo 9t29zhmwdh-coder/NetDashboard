@@ -12,7 +12,7 @@
 
 > 🇩🇪 [Deutsche Version](README.de.md)
 
-A compact Windows desktop app (C#, WPF, .NET 8) that combines DNS diagnostics, mail server discovery, network connectivity checks, and system information in a single dark-themed interface — with full trilingual UI.
+A compact Windows desktop app (C#, WPF, .NET 8) that combines DNS diagnostics, mail server discovery, network connectivity checks, and system information in a single dark-themed interface; with full trilingual UI.
 
 ---
 
@@ -21,7 +21,7 @@ A compact Windows desktop app (C#, WPF, .NET 8) that combines DNS diagnostics, m
 | Tab | Function |
 |-----|----------|
 | **Mail Check** | Enter any email address → auto-discover IMAP & SMTP server via live DNS lookup |
-| **DNS Check** | Query A, AAAA, MX, TXT, NS, CNAME, SOA, PTR and ALL records — parallel across up to 3 resolvers |
+| **DNS Check** | Query A, AAAA, MX, TXT, NS, CNAME, SOA, PTR and ALL records , parallel across up to 3 resolvers |
 | **Connection** | Ping, port test and traceroute to any host |
 | **My System** | IP configuration, DNS servers, flush DNS cache, ARP table, routing table, public IP |
 
@@ -35,7 +35,7 @@ NetDashboard is particularly useful in Microsoft 365 and Exchange Online environ
 
 | Scenario | How |
 |----------|-----|
-| **Verify M365 mail setup** | Query MX records for `yourdomain.com` — confirm routing to Exchange Online |
+| **Verify M365 mail setup** | Query MX records for `yourdomain.com` ; confirms routing to Exchange Online |
 | **SPF / DKIM / DMARC audit** | TXT record lookup shows SPF policy, DKIM selectors, and DMARC enforcement |
 | **Auto-discover validation** | Check CNAME `autodiscover.yourdomain.com` points to `autodiscover.outlook.com` |
 | **Teams / SIP SRV records** | Use DNS Check → ALL to inspect Teams Direct Routing SRV records |
@@ -47,7 +47,7 @@ NetDashboard is particularly useful in Microsoft 365 and Exchange Online environ
 
 ## Languages / Sprachen / Langues
 
-Switch language directly in the app — no restart required.
+Switch language directly in the app, no restart required.
 
 🇩🇪 Deutsch &nbsp;|&nbsp; 🇬🇧 English &nbsp;|&nbsp; 🇫🇷 Français
 
@@ -79,7 +79,7 @@ dotnet run --project NetDashboard.csproj
 - **Framework:** WPF / .NET 8
 - **UI:** Dark theme, MVVM pattern
 - **DNS:** System.Net.Dns + raw UDP resolver
-- **No external dependencies** — fully offline after launch
+- **No external dependencies**: fully offline after launch
 
 ---
 
