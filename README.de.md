@@ -5,9 +5,9 @@
 
 > 🇬🇧 [English Version](README.md)
 
-**Netzwerk- & Mail-Toolkit für Windows — C# · WPF · .NET 8**
+**Netzwerk- & Mail-Toolkit für Windows; C# · WPF · .NET 8**
 
-NetDashboard ist ein kompaktes Windows-Werkzeug, das DNS-Abfragen, E-Mail-Server-Erkennung, Netzwerkdiagnose und Systeminformationen in einer einzigen Dark-Theme-Oberfläche vereint — mit vollständiger dreisprachiger UI.
+NetDashboard ist ein kompaktes Windows-Werkzeug, das DNS-Abfragen, E-Mail-Server-Erkennung, Netzwerkdiagnose und Systeminformationen in einer einzigen Dark-Theme-Oberfläche vereint; mit vollständiger dreisprachiger UI.
 
 ![Windows](https://img.shields.io/badge/Windows-10%2F11-lightgrey?logo=windows)
 ![.NET](https://img.shields.io/badge/.NET-8.0-orange?logo=dotnet)
@@ -21,7 +21,7 @@ NetDashboard ist ein kompaktes Windows-Werkzeug, das DNS-Abfragen, E-Mail-Server
 | Tab | Funktion |
 |-----|----------|
 | **Mail-Check** | E-Mail-Adresse eingeben → IMAP- & SMTP-Server automatisch per DNS ermitteln |
-| **DNS-Check** | Abfragen für A, AAAA, MX, TXT, NS, CNAME, SOA, PTR und ALL — parallel über bis zu 3 Resolver |
+| **DNS-Check** | Abfragen für A, AAAA, MX, TXT, NS, CNAME, SOA, PTR und ALL , parallel über bis zu 3 Resolver |
 | **Verbindung** | Ping, Port-Test und Traceroute zu beliebigen Hosts |
 | **Mein System** | IP-Konfiguration, DNS-Server, DNS-Cache anzeigen/leeren, ARP-Tabelle, Routing-Tabelle, öffentliche IP |
 
@@ -35,19 +35,19 @@ NetDashboard ist besonders nützlich in Microsoft 365- und Exchange Online-Umgeb
 
 | Szenario | Vorgehensweise |
 |----------|----------------|
-| **M365-Mail-Setup prüfen** | MX-Record für `deinedomain.ch` abfragen — Exchange Online-Routing bestätigen |
+| **M365-Mail-Setup prüfen** | MX-Record für `deinedomain.ch` abfragen ; Exchange Online-Routing bestätigen |
 | **SPF / DKIM / DMARC Audit** | TXT-Record-Abfrage zeigt SPF-Policy, DKIM-Selektoren und DMARC-Enforcement |
 | **Autodiscover-Validierung** | CNAME `autodiscover.deinedomain.ch` → `autodiscover.outlook.com` prüfen |
 | **Teams / SIP SRV-Records** | DNS-Check → ALL für Teams Direct Routing SRV-Records |
 | **MX-Priorität prüfen** | MX-Prioritätsreihenfolge für hybrides Exchange-Routing verifizieren |
-| **Spam-Filter-Bypass** | Alle TXT-Records prüfen — Drittanbieter-Filter in SPF enthalten? |
+| **Spam-Filter-Bypass** | Alle TXT-Records prüfen : Drittanbieter-Filter in SPF enthalten? |
 | **Connector-Fehlerbehebung** | SMTP-Banner und Port-Verfügbarkeit zu Exchange Online IPs testen |
 
 ---
 
 ## Sprachen / Languages / Langues
 
-Die Sprache ist direkt in der App umschaltbar — kein Neustart nötig.
+Die Sprache ist direkt in der App umschaltbar, kein Neustart nötig.
 
 🇩🇪 Deutsch &nbsp;|&nbsp; 🇬🇧 English &nbsp;|&nbsp; 🇫🇷 Français
 
@@ -79,7 +79,7 @@ dotnet run --project NetDashboard.csproj
 - **Framework:** WPF / .NET 8
 - **UI:** Dark-Theme, MVVM-Muster
 - **DNS:** System.Net.Dns + roher UDP-Resolver
-- **Keine externen Abhängigkeiten** — vollständig offline nach dem Start
+- **Keine externen Abhängigkeiten**: vollständig offline nach dem Start
 
 ---
 
