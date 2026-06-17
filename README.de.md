@@ -70,7 +70,6 @@ dotnet build NetDashboard.csproj --configuration Release
 dotnet run --project NetDashboard.csproj
 ```
 
-Oder aktuellen Release herunterladen und `NetDashboard.exe` starten — kein Installer erforderlich.
 
 ---
 
