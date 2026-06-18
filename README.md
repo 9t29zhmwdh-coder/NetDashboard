@@ -14,6 +14,8 @@
 
 A compact Windows desktop app (C#, WPF, .NET 8) that combines DNS diagnostics, mail server discovery, network connectivity checks, and system information in a single dark-themed interface; with full trilingual UI.
 
+Built for M365-connected infrastructure. Validates DNS and Exchange Online connectivity requirements aligned with [Microsoft 365 network connectivity principles](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-network-connectivity-principles).
+
 ---
 
 ## Features

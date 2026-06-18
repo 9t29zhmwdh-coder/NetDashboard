@@ -9,6 +9,8 @@
 
 NetDashboard ist ein kompaktes Windows-Werkzeug, das DNS-Abfragen, E-Mail-Server-Erkennung, Netzwerkdiagnose und Systeminformationen in einer einzigen Dark-Theme-Oberfläche vereint; mit vollständiger dreisprachiger UI.
 
+Konzipiert fuer M365-verbundene Infrastrukturen. Validiert DNS- und Exchange Online-Konnektivitaetsanforderungen gemaess den [Microsoft 365 Netzwerk-Konnektivitaetsprinzipien](https://learn.microsoft.com/de-de/microsoft-365/enterprise/microsoft-365-network-connectivity-principles).
+
 ![Windows](https://img.shields.io/badge/Windows-10%2F11-lightgrey?logo=windows)
 ![.NET](https://img.shields.io/badge/.NET-8.0-orange?logo=dotnet)
 ![Language](https://img.shields.io/badge/Sprache-DE%20%7C%20EN%20%7C%20FR-lightgrey)
