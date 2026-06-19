@@ -4,10 +4,7 @@
   <h1>NetDashboard</h1>
   <p><strong>Network & Mail Diagnostics Toolkit for Windows</strong></p>
 
-  ![Windows](https://img.shields.io/badge/Windows-10%2F11-lightgrey?logo=windows)
-  ![.NET](https://img.shields.io/badge/.NET-8.0-orange?logo=dotnet)
-  ![Language](https://img.shields.io/badge/Sprache-DE%20%7C%20EN%20%7C%20FR-lightgrey)
-  [![CI](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/ci.yml)
+[![CI](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/9t29zhmwdh-coder/NetDashboard/actions) ![Microsoft | M365](https://img.shields.io/badge/Microsoft-M365-0078d4?logo=microsoft&logoColor=white) ![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey?logo=windows&logoColor=0078d4) ![C#](https://img.shields.io/badge/C%23-239120?logo=dotnet&logoColor=white) ![AI | Claude Code](https://img.shields.io/badge/AI-Claude_Code-black?logo=anthropic&logoColor=white) ![AI | Copilot](https://img.shields.io/badge/AI-Copilot-black?logo=github&logoColor=white)
 </div>
 
 > 🇩🇪 [Deutsche Version](README.de.md)
@@ -85,4 +82,4 @@ dotnet run --project NetDashboard.csproj
 
 ---
 
-**Author:** [Rafael Yilmaz](https://github.com/9t29zhmwdh-coder) &nbsp;·&nbsp; **Status:** Active &nbsp;·&nbsp; **Last Updated:** June 2026
+**Author:** [Rafael Yilmaz](https://github.com/9t29zhmwdh-coder) · **Status:** Active · v0.1.0 · **License:** MIT
