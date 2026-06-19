@@ -11,10 +11,7 @@ NetDashboard ist ein kompaktes Windows-Werkzeug, das DNS-Abfragen, E-Mail-Server
 
 Konzipiert fuer M365-verbundene Infrastrukturen. Validiert DNS- und Exchange Online-Konnektivitaetsanforderungen gemaess den [Microsoft 365 Netzwerk-Konnektivitaetsprinzipien](https://learn.microsoft.com/de-de/microsoft-365/enterprise/microsoft-365-network-connectivity-principles).
 
-![Windows](https://img.shields.io/badge/Windows-10%2F11-lightgrey?logo=windows)
-![.NET](https://img.shields.io/badge/.NET-8.0-orange?logo=dotnet)
-![Language](https://img.shields.io/badge/Sprache-DE%20%7C%20EN%20%7C%20FR-lightgrey)
-[![CI](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/ci.yml)
+[![CI](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/9t29zhmwdh-coder/NetDashboard/actions) ![Microsoft | M365](https://img.shields.io/badge/Microsoft-M365-0078d4?logo=microsoft&logoColor=white) ![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey?logo=windows&logoColor=0078d4) ![C#](https://img.shields.io/badge/C%23-239120?logo=dotnet&logoColor=white) ![AI | Claude Code](https://img.shields.io/badge/AI-Claude_Code-black?logo=anthropic&logoColor=white) ![AI | Copilot](https://img.shields.io/badge/AI-Copilot-black?logo=github&logoColor=white)
 
 ---
 
@@ -85,4 +82,4 @@ dotnet run --project NetDashboard.csproj
 
 ---
 
-**Autor:** [Rafael Yilmaz](https://github.com/9t29zhmwdh-coder) &nbsp;·&nbsp; **Status:** Aktiv &nbsp;·&nbsp; **Letzte Aktualisierung:** Juni 2026
+**Autor:** [Rafael Yilmaz](https://github.com/9t29zhmwdh-coder) · **Status:** Active · v0.1.0 · **Lizenz:** MIT
