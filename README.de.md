@@ -9,11 +9,17 @@
 
 NetDashboard ist ein kompaktes Windows-Werkzeug, das DNS-Abfragen, E-Mail-Server-Erkennung, Netzwerkdiagnose und Systeminformationen in einer einzigen Dark-Theme-Oberfläche vereint; mit vollständiger dreisprachiger UI.
 
-Konzipiert fuer M365-verbundene Infrastrukturen. Validiert DNS- und Exchange Online-Konnektivitaetsanforderungen gemaess den [Microsoft 365 Netzwerk-Konnektivitaetsprinzipien](https://learn.microsoft.com/de-de/microsoft-365/enterprise/microsoft-365-network-connectivity-principles).
+Konzipiert für M365-verbundene Infrastrukturen. Validiert DNS- und Exchange Online-Konnektivitätsanforderungen gemäss den [Microsoft 365 Netzwerk-Konnektivitätsprinzipien](https://learn.microsoft.com/de-de/microsoft-365/enterprise/microsoft-365-network-connectivity-principles).
 
 [![CI](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/9t29zhmwdh-coder/NetDashboard/actions) ![Microsoft | M365](https://img.shields.io/badge/Microsoft-M365-0078d4?logo=microsoft&logoColor=white) ![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey?logo=windows&logoColor=0078d4) ![C#](https://img.shields.io/badge/C%23-239120?logo=dotnet&logoColor=white) ![AI | Claude Code](https://img.shields.io/badge/AI-Claude_Code-black?logo=anthropic&logoColor=white) ![AI | Copilot](https://img.shields.io/badge/AI-Copilot-black?logo=github&logoColor=white) [![Release](https://img.shields.io/github/v/release/9t29zhmwdh-coder/NetDashboard?color=3F8E7E)](https://github.com/9t29zhmwdh-coder/NetDashboard/releases) [![License](https://img.shields.io/github/license/9t29zhmwdh-coder/NetDashboard?color=lightgrey)](LICENSE)
 
+> **So läuft das:** NetDashboard ist eine native Windows-Desktop-App (WPF), kein Server und kein Browser-Tool. Sie öffnet ihr eigenes Fenster wie jedes installierte Programm. Aktuell gibt es keinen fertigen Installer: du baust die App aus dem Quellcode mit dem .NET 8 SDK, siehe Erste Schritte unten.
+
+![NetDashboard](screenshot.png)
+
 ---
+
+**In der Praxis:** Du bekommst ein einzelnes Dark-Theme-Fenster, das in wenigen Klicks beantwortet, warum eine Domain keine Mails senden oder empfangen kann: Adresse einfügen, Mailserver ermitteln, und DNS, SPF, DKIM und DMARC gleichzeitig über drei öffentliche Resolver querprüfen.
 
 ## Funktionen
 
@@ -69,6 +75,11 @@ dotnet build NetDashboard.csproj --configuration Release
 dotnet run --project NetDashboard.csproj
 ```
 
+---
+
+## Deinstallation / Datenbereinigung
+
+Lösche den Build-Ordner (`bin/`, `obj/`), oder entferne die installierte Kopie über Windows-Einstellungen → Apps, falls du sie selbst verpackt hast. NetDashboard schreibt nicht in die Registry und hat keine gespeicherten Einstellungen: nach dem Schliessen bleibt nichts zurück.
 
 ---
 

@@ -13,7 +13,13 @@ A compact Windows desktop app (C#, WPF, .NET 8) that combines DNS diagnostics, m
 
 Built for M365-connected infrastructure. Validates DNS and Exchange Online connectivity requirements aligned with [Microsoft 365 network connectivity principles](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-network-connectivity-principles).
 
+> **How it runs:** NetDashboard is a native Windows desktop app (WPF), not a server and not a browser tool. It opens its own window like any installed program. There is currently no prebuilt installer: you build it from source with the .NET 8 SDK, see Getting Started below.
+
+![NetDashboard](screenshot.png)
+
 ---
+
+**In practice:** you get a single dark-themed window that answers "why can't this domain send or receive mail" in a few clicks: paste an address, get the mail server, and cross-check DNS, SPF, DKIM, and DMARC across three public resolvers at once.
 
 ## Features
 
@@ -69,6 +75,11 @@ dotnet build NetDashboard.csproj --configuration Release
 dotnet run --project NetDashboard.csproj
 ```
 
+---
+
+## Uninstall / Cleanup
+
+Delete the build output folder (`bin/`, `obj/`), or remove the installed copy via Windows Settings → Apps if you packaged it yourself. NetDashboard does not write to the registry and has no persisted settings file: closing the app leaves nothing else behind.
 
 ---
 
