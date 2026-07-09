@@ -63,6 +63,8 @@ Die Sprache ist direkt in der App umschaltbar, kein Neustart nötig.
 - Windows 10 / 11
 - [.NET 8.0 Runtime](https://dotnet.microsoft.com/download/dotnet/8.0)
 
+> 🌱 Neu hier? → [Schritt-für-Schritt-Anleitung für Einsteiger](GETTING_STARTED.de.md)
+
 ---
 
 ## Erste Schritte
