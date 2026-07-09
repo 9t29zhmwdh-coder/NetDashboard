@@ -19,6 +19,10 @@ Konzipiert für M365-verbundene Infrastrukturen. Validiert DNS- und Exchange Onl
 
 ---
 
+> 🌱 Neu hier? → [Schritt-für-Schritt-Anleitung für Einsteiger](GETTING_STARTED.de.md)
+
+---
+
 **In der Praxis:** Du bekommst ein einzelnes Dark-Theme-Fenster, das in wenigen Klicks beantwortet, warum eine Domain keine Mails senden oder empfangen kann: Adresse einfügen, Mailserver ermitteln, und DNS, SPF, DKIM und DMARC gleichzeitig über drei öffentliche Resolver querprüfen.
 
 ## Funktionen
@@ -62,8 +66,6 @@ Die Sprache ist direkt in der App umschaltbar, kein Neustart nötig.
 
 - Windows 10 / 11
 - [.NET 8.0 Runtime](https://dotnet.microsoft.com/download/dotnet/8.0)
-
-> 🌱 Neu hier? → [Schritt-für-Schritt-Anleitung für Einsteiger](GETTING_STARTED.de.md)
 
 ---
 
