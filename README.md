@@ -19,6 +19,10 @@ Built for M365-connected infrastructure. Validates DNS and Exchange Online conne
 
 ---
 
+> 🌱 New here? → [Step-by-step guide for beginners](GETTING_STARTED.md)
+
+---
+
 **In practice:** you get a single dark-themed window that answers "why can't this domain send or receive mail" in a few clicks: paste an address, get the mail server, and cross-check DNS, SPF, DKIM, and DMARC across three public resolvers at once.
 
 ## Features
