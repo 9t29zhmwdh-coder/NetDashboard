@@ -3,7 +3,7 @@
   <h1>NetDashboard</h1>
 </div>
 
-> 🇬🇧 [English Version](README.md)
+[🇬🇧 English Version](README.md)
 
 **Netzwerk- & Mail-Toolkit für Windows; C# · WPF · .NET 8**
 
