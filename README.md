@@ -67,8 +67,6 @@ Switch language directly in the app, no restart required.
 - Windows 10 / 11
 - [.NET 8.0 Runtime](https://dotnet.microsoft.com/download/dotnet/8.0)
 
-> 🌱 New here? → [Step-by-step guide for beginners](GETTING_STARTED.md)
-
 ---
 
 ## Getting Started
