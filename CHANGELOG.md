@@ -5,6 +5,12 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.1.9] - 2026-07-11
+
+### Fixed
+
+- Removed an eszett and em-dashes/en-dashes across the repo (TEMPLATE_NOTES.md, MainWindow.xaml.cs, GETTING_STARTED.md/.de.md, SKELETON.md, Services/NetworkService.cs, CONTRIBUTING.md), including the DE/EN/FR in-app help text. Swiss German orthography.
+
 ## [0.1.8] - 2026-07-11
 
 ### Added

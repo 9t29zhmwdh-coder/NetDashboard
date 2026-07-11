@@ -1,4 +1,4 @@
-# NetDashboard — Professional Repo Skeleton
+# NetDashboard: Professional Repo Skeleton
 
 **Generated:** 2026-06-16 | **Earliest commit:** 2026-06-15 | **Release:** v0.1.0
 
@@ -8,9 +8,9 @@
 - ARCHITECTURE.md ✅
 - PRIVACY.md ✅
 - ROADMAP.md ✅
-- CONTRIBUTING.md (preserved — already existed)
+- CONTRIBUTING.md (preserved, already existed)
 - CODE_OF_CONDUCT.md ✅
-- SECURITY.md (preserved — already existed)
+- SECURITY.md (preserved, already existed)
 - CHANGELOG.md ✅
 - .github/ISSUE_TEMPLATE/bug_report.md ✅
 - .github/ISSUE_TEMPLATE/feature_request.md ✅
@@ -60,4 +60,4 @@ NetDashboard/
 ```
 
 ---
-*NetDashboard — RayStudio · Rafael Yilmaz · MIT License · 2026*
+*NetDashboard: RayStudio · Rafael Yilmaz · MIT License · 2026*

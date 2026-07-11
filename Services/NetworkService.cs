@@ -59,7 +59,7 @@ public class NetworkService
         sb.AppendLine();
 
         // 1) MX über alle Resolver
-        sb.AppendLine("1) Mailserver (MX) – wer nimmt E-Mails für diese Domain an?");
+        sb.AppendLine("1) Mailserver (MX): wer nimmt E-Mails für diese Domain an?");
         var tasks = resolvers.Select(async r => (r, hosts: await GetMxHostsAsync(domain, r.Ip)));
         var results = await Task.WhenAll(tasks);
 
@@ -87,7 +87,7 @@ public class NetworkService
         sb.AppendLine("3) E-Mail-Sicherheit (SPF):");
         string spf = await GetSpfAsync(domain, ip0);
         sb.AppendLine(string.IsNullOrWhiteSpace(spf)
-            ? "   Kein SPF-Eintrag gefunden. (SPF schützt vor gefälschten Absendern – sollte gesetzt sein.)"
+            ? "   Kein SPF-Eintrag gefunden. (SPF schützt vor gefälschten Absendern, sollte gesetzt sein.)"
             : "   " + spf);
         sb.AppendLine();
 
@@ -169,10 +169,10 @@ public class NetworkService
     {
         var nonEmpty = lists.Where(l => l.Count > 0).ToList();
         if (nonEmpty.Count <= 1)
-            return "✔ Nur eine Quelle abgefragt – für einen echten Vergleich mehrere Resolver anhaken.";
+            return "✔ Nur eine Quelle abgefragt, für einen echten Vergleich mehrere Resolver anhaken.";
         var norm = nonEmpty.Select(l => string.Join("|", l.Select(s => s.ToLowerInvariant()).OrderBy(s => s)));
         return norm.Distinct().Count() == 1
-            ? "✔ Alle Resolver liefern dieselben Mailserver – DNS ist konsistent."
+            ? "✔ Alle Resolver liefern dieselben Mailserver, DNS ist konsistent."
             : "⚠ Unterschiedliche Antworten! Mögliche Gründe: laufende DNS-Umstellung, Zwischenspeicher (Cache) " +
               "oder ein Resolver-Problem. Später erneut prüfen.";
     }
@@ -187,7 +187,7 @@ public class NetworkService
                 "   • Posteingang (IMAP): outlook.office365.com   Port 993   Verschlüsselung: SSL/TLS\n" +
                 "   • Postausgang (SMTP): smtp.office365.com       Port 587   Verschlüsselung: STARTTLS\n" +
                 "   • Benutzername: deine komplette E-Mail-Adresse\n" +
-                "   • Tipp: In Outlook 'Exchange'/automatische Einrichtung wählen – Adresse + Passwort genügen meist.";
+                "   • Tipp: In Outlook 'Exchange'/automatische Einrichtung wählen, Adresse + Passwort genügen meist.";
 
         if (j.Contains("google") || j.Contains("googlemail"))
             return

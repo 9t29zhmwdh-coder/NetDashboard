@@ -189,7 +189,7 @@ public partial class MainWindow : Window
     {
         if (!int.TryParse(PortInput.Text.Trim(), out port) || port is < 1 or > 65535)
         {
-            Append(ConnOutput, "FEHLER: Bitte einen gültigen Port (1–65535) eingeben.");
+            Append(ConnOutput, "FEHLER: Bitte einen gültigen Port (1-65535) eingeben.");
             return false;
         }
         return true;
@@ -208,11 +208,11 @@ public partial class MainWindow : Window
         ["tabSys"] = "💻 Mein System",
         ["tabHelp"] = "ℹ️ Hilfe",
         ["mailTitle"] = "Mail-Einstellungen herausfinden",
-        ["mailHint"] = "Du kennst nur deine E-Mail-Adresse, aber nicht die Server-Einstellungen? Adresse eingeben und auf 'Prüfen' klicken – das Tool findet den Mailserver, erkennt den Anbieter und zeigt die passenden IMAP-/SMTP-Werte.",
+        ["mailHint"] = "Du kennst nur deine E-Mail-Adresse, aber nicht die Server-Einstellungen? Adresse eingeben und auf 'Prüfen' klicken, das Tool findet den Mailserver, erkennt den Anbieter und zeigt die passenden IMAP-/SMTP-Werte.",
         ["mailLabel"] = "E-Mail-Adresse",
         ["mailBtn"] = "✓ Prüfen",
         ["dnsTitle"] = "DNS-Einträge prüfen (für Support)",
-        ["dnsHint"] = "Domain oder IP eingeben und Abfrage wählen. Läuft über alle oben ausgewählten Resolver – so siehst du sofort, ob alle dasselbe liefern.",
+        ["dnsHint"] = "Domain oder IP eingeben und Abfrage wählen. Läuft über alle oben ausgewählten Resolver, so siehst du sofort, ob alle dasselbe liefern.",
         ["dnsLabel"] = "Domain oder IP-Adresse",
         ["recA"] = "IPv4 (A)",
         ["recAAAA"] = "IPv6 (AAAA)",
@@ -231,7 +231,7 @@ public partial class MainWindow : Window
         ["btnPort"] = "Port-Test",
         ["btnTrace"] = "Route / Tracert",
         ["sysTitle"] = "Infos über deinen PC & dein Netzwerk",
-        ["sysHint"] = "Keine Eingabe nötig – einfach auf eine Schaltfläche klicken.",
+        ["sysHint"] = "Keine Eingabe nötig, einfach auf eine Schaltfläche klicken.",
         ["btnIpcfg"] = "IP-Konfiguration",
         ["btnDnsSrv"] = "Aktive DNS-Server",
         ["btnCacheShow"] = "DNS-Cache anzeigen",
@@ -262,11 +262,11 @@ public partial class MainWindow : Window
         ["tabSys"] = "💻 My System",
         ["tabHelp"] = "ℹ️ Help",
         ["mailTitle"] = "Find your mail settings",
-        ["mailHint"] = "You only know your email address, not the server settings? Enter the address and click 'Check' – the tool finds the mail server, detects the provider and shows the matching IMAP/SMTP values.",
+        ["mailHint"] = "You only know your email address, not the server settings? Enter the address and click 'Check', the tool finds the mail server, detects the provider and shows the matching IMAP/SMTP values.",
         ["mailLabel"] = "Email address",
         ["mailBtn"] = "✓ Check",
         ["dnsTitle"] = "Check DNS records (for support)",
-        ["dnsHint"] = "Enter a domain or IP and pick a query. It runs across all resolvers selected above – so you immediately see whether they all return the same.",
+        ["dnsHint"] = "Enter a domain or IP and pick a query. It runs across all resolvers selected above, so you immediately see whether they all return the same.",
         ["dnsLabel"] = "Domain or IP address",
         ["recA"] = "IPv4 (A)",
         ["recAAAA"] = "IPv6 (AAAA)",
@@ -285,7 +285,7 @@ public partial class MainWindow : Window
         ["btnPort"] = "Port test",
         ["btnTrace"] = "Route / Tracert",
         ["sysTitle"] = "Info about your PC & network",
-        ["sysHint"] = "No input needed – just click a button.",
+        ["sysHint"] = "No input needed, just click a button.",
         ["btnIpcfg"] = "IP configuration",
         ["btnDnsSrv"] = "Active DNS servers",
         ["btnCacheShow"] = "Show DNS cache",
@@ -316,11 +316,11 @@ public partial class MainWindow : Window
         ["tabSys"] = "💻 Mon système",
         ["tabHelp"] = "ℹ️ Aide",
         ["mailTitle"] = "Trouver les paramètres de messagerie",
-        ["mailHint"] = "Vous connaissez seulement votre adresse e-mail, pas les paramètres du serveur ? Saisissez l'adresse et cliquez sur « Vérifier » – l'outil trouve le serveur de messagerie, détecte le fournisseur et affiche les valeurs IMAP/SMTP adaptées.",
+        ["mailHint"] = "Vous connaissez seulement votre adresse e-mail, pas les paramètres du serveur ? Saisissez l'adresse et cliquez sur « Vérifier », l'outil trouve le serveur de messagerie, détecte le fournisseur et affiche les valeurs IMAP/SMTP adaptées.",
         ["mailLabel"] = "Adresse e-mail",
         ["mailBtn"] = "✓ Vérifier",
         ["dnsTitle"] = "Vérifier les enregistrements DNS (pour le support)",
-        ["dnsHint"] = "Saisissez un domaine ou une IP et choisissez une requête. Elle s'exécute sur tous les résolveurs sélectionnés ci-dessus – vous voyez immédiatement s'ils renvoient tous la même chose.",
+        ["dnsHint"] = "Saisissez un domaine ou une IP et choisissez une requête. Elle s'exécute sur tous les résolveurs sélectionnés ci-dessus, vous voyez immédiatement s'ils renvoient tous la même chose.",
         ["dnsLabel"] = "Domaine ou adresse IP",
         ["recA"] = "IPv4 (A)",
         ["recAAAA"] = "IPv6 (AAAA)",
@@ -339,7 +339,7 @@ public partial class MainWindow : Window
         ["btnPort"] = "Test de port",
         ["btnTrace"] = "Route / Tracert",
         ["sysTitle"] = "Infos sur votre PC & réseau",
-        ["sysHint"] = "Aucune saisie nécessaire – cliquez simplement sur un bouton.",
+        ["sysHint"] = "Aucune saisie nécessaire, cliquez simplement sur un bouton.",
         ["btnIpcfg"] = "Configuration IP",
         ["btnDnsSrv"] = "Serveurs DNS actifs",
         ["btnCacheShow"] = "Afficher le cache DNS",
