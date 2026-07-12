@@ -5,6 +5,17 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.1.10] - 2026-07-12
+
+### Added
+
+- Release workflow (`release.yml`) that publishes a framework-dependent build and packages it with Inno Setup into `NetDashboard-Setup-*.exe`, attached to a GitHub Release on every `v*.*.*` tag push. Previously there was no prebuilt installer; users had to build from source.
+- README download section (EN + DE) pointing to the Releases page.
+
+### Fixed
+
+- Pinned `actions/checkout` and `actions/setup-dotnet` in `ci.yml` to a commit SHA instead of a mutable tag, per the portfolio's supply-chain integrity standard.
+
 ## [0.1.9] - 2026-07-11
 
 ### Fixed

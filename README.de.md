@@ -13,9 +13,13 @@ Konzipiert für M365-verbundene Infrastrukturen. Validiert DNS- und Exchange Onl
 
 [![CI](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/9t29zhmwdh-coder/NetDashboard/actions) ![Microsoft | M365](https://img.shields.io/badge/Microsoft-M365-0078d4?logo=microsoft&logoColor=white) ![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey?logo=windows&logoColor=0078d4) ![C#](https://img.shields.io/badge/C%23-239120?logo=dotnet&logoColor=white) ![AI | Claude Code](https://img.shields.io/badge/AI-Claude_Code-black?logo=anthropic&logoColor=white) ![AI | Copilot](https://img.shields.io/badge/AI-Copilot-black?logo=github&logoColor=white) [![Release](https://img.shields.io/github/v/release/9t29zhmwdh-coder/NetDashboard?color=3F8E7E)](https://github.com/9t29zhmwdh-coder/NetDashboard/releases) [![License](https://img.shields.io/github/license/9t29zhmwdh-coder/NetDashboard?color=lightgrey)](LICENSE)
 
-> **So läuft das:** NetDashboard ist eine native Windows-Desktop-App (WPF), kein Server und kein Browser-Tool. Sie öffnet ihr eigenes Fenster wie jedes installierte Programm. Aktuell gibt es keinen fertigen Installer: du baust die App aus dem Quellcode mit dem .NET 8 SDK, siehe Erste Schritte unten.
+> **So läuft das:** NetDashboard ist eine native Windows-Desktop-App (WPF), kein Server und kein Browser-Tool. Sie öffnet ihr eigenes Fenster wie jedes installierte Programm.
 
 ![NetDashboard](screenshot.png)
+
+---
+
+> 💾 **Download:** [Windows-Installer](https://github.com/9t29zhmwdh-coder/NetDashboard/releases/latest) (siehe Release-Assets für `NetDashboard-Setup-*.exe`): benötigt die [.NET 8.0 Runtime](https://dotnet.microsoft.com/download/dotnet/8.0), nicht codesigniert (Windows SmartScreen warnt beim ersten Start). Oder aus dem Quellcode bauen, siehe Erste Schritte unten.
 
 ---
 
