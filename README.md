@@ -15,9 +15,13 @@ A compact Windows desktop app (C#, WPF, .NET 8) that combines DNS diagnostics, m
 
 Built for M365-connected infrastructure. Validates DNS and Exchange Online connectivity requirements aligned with [Microsoft 365 network connectivity principles](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-network-connectivity-principles).
 
-> **How it runs:** NetDashboard is a native Windows desktop app (WPF), not a server and not a browser tool. It opens its own window like any installed program. There is currently no prebuilt installer: you build it from source with the .NET 8 SDK, see Getting Started below.
+> **How it runs:** NetDashboard is a native Windows desktop app (WPF), not a server and not a browser tool. It opens its own window like any installed program.
 
 ![NetDashboard](screenshot.png)
+
+---
+
+> 💾 **Download:** [Windows Installer](https://github.com/9t29zhmwdh-coder/NetDashboard/releases/latest) (see release assets for `NetDashboard-Setup-*.exe`): requires the [.NET 8.0 Runtime](https://dotnet.microsoft.com/download/dotnet/8.0), not code-signed (Windows SmartScreen will warn on first run). Or build from source, see Getting Started below.
 
 ---
 
