@@ -146,8 +146,8 @@
                 <TextBlock Text="🌐" FontSize="16" Foreground="#CBD5E1" VerticalAlignment="Center" Margin="0,0,6,0"/>
                 <ComboBox x:Name="LangSelector" Width="130" Height="32" VerticalAlignment="Center"
                           FontSize="13" SelectionChanged="LangSelector_SelectionChanged">
-                    <ComboBoxItem Tag="de" Content="Deutsch"/>
                     <ComboBoxItem Tag="en" Content="English"/>
+                    <ComboBoxItem Tag="de" Content="Deutsch"/>
                     <ComboBoxItem Tag="fr" Content="Français"/>
                 </ComboBox>
             </StackPanel>

@@ -11,7 +11,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        LangSelector.SelectedIndex = 0; // Deutsch -> löst ApplyLanguage aus
+        LangSelector.SelectedIndex = 0; // English -> löst ApplyLanguage aus
     }
 
     // ---- Sprache ------------------------------------------------------

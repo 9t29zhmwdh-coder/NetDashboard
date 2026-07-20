@@ -8,6 +8,7 @@
 <p><strong>Network & Mail Diagnostics Toolkit for Windows</strong></p>
 
 [![CI](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/9t29zhmwdh-coder/NetDashboard/actions) [![CodeQL](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/9t29zhmwdh-coder/NetDashboard/security/code-scanning) [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/9t29zhmwdh-coder/NetDashboard/badge)](https://securityscorecards.dev/viewer/?uri=github.com/9t29zhmwdh-coder/NetDashboard)
+
 ![Microsoft | M365](https://img.shields.io/badge/Microsoft-M365-0078d4?logo=microsoft&logoColor=white) ![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey?logo=windows&logoColor=0078d4) ![C#](https://img.shields.io/badge/C%23-239120?logo=dotnet&logoColor=white) ![AI | Claude Code](https://img.shields.io/badge/AI-Claude_Code-black?logo=anthropic&logoColor=white) ![AI | Copilot](https://img.shields.io/badge/AI-Copilot-black?logo=github&logoColor=white) [![Release](https://img.shields.io/github/v/release/9t29zhmwdh-coder/NetDashboard?color=3F8E7E)](https://github.com/9t29zhmwdh-coder/NetDashboard/releases) [![License](https://img.shields.io/github/license/9t29zhmwdh-coder/NetDashboard?color=lightgrey)](LICENSE)
 
 [🇩🇪 Deutsche Version](README.de.md)
