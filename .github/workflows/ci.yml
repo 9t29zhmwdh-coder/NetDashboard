@@ -22,3 +22,16 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --no-restore --configuration Release
+      - name: Test
+        run: dotnet test --no-build --configuration Release --collect:"XPlat Code Coverage"
+      - name: Generate Coverage Report
+        run: |
+          $coverageFiles = @(Get-ChildItem -Path "**/coverage.cobertura.xml" -Recurse)
+          if ($coverageFiles.Count -gt 0) {
+            Write-Output "Coverage files found: $($coverageFiles.Count)"
+            foreach ($file in $coverageFiles) {
+              Write-Output "  - $($file.FullName)"
+            }
+          } else {
+            Write-Output "No coverage files found."
+          }
