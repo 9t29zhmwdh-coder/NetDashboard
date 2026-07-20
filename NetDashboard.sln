@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.37314.3 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDashboard", "NetDashboard.csproj", "{F44DB051-E447-4B1C-9F26-6DA264CC3F87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDashboard.Tests", "NetDashboard.Tests/NetDashboard.Tests.csproj", "{7A9C8B3C-5D7E-4F2A-9E1B-6C3D8F4A7B2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F44DB051-E447-4B1C-9F26-6DA264CC3F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F44DB051-E447-4B1C-9F26-6DA264CC3F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F44DB051-E447-4B1C-9F26-6DA264CC3F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A9C8B3C-5D7E-4F2A-9E1B-6C3D8F4A7B2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A9C8B3C-5D7E-4F2A-9E1B-6C3D8F4A7B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A9C8B3C-5D7E-4F2A-9E1B-6C3D8F4A7B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A9C8B3C-5D7E-4F2A-9E1B-6C3D8F4A7B2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
