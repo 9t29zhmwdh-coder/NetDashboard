@@ -395,7 +395,7 @@ public class NetworkServiceTests
 
         // Assert
         Assert.NotNull(result);
-        Assert.IsType<Task<string>>(result);
+        Assert.IsAssignableFrom<Task<string>>(result);
     }
 
     [Fact]
@@ -409,7 +409,7 @@ public class NetworkServiceTests
         // Act & Assert
         // This test verifies the method structure; actual execution requires PowerShell
         var task = _service.DnsLookupMultiAsync(host, type, resolvers);
-        Assert.IsType<Task<string>>(task);
+        Assert.IsAssignableFrom<Task<string>>(task);
     }
 
     [Fact]
@@ -422,7 +422,7 @@ public class NetworkServiceTests
         // Act & Assert
         // This test verifies the method structure; actual execution requires PowerShell
         var task = _service.MailCheckAsync(email, resolvers);
-        Assert.IsType<Task<string>>(task);
+        Assert.IsAssignableFrom<Task<string>>(task);
     }
 
     [Fact]
@@ -465,7 +465,7 @@ public class NetworkServiceTests
 
         // Assert
         Assert.NotNull(result);
-        Assert.IsType<Task<string>>(result);
+        Assert.IsAssignableFrom<Task<string>>(result);
     }
 
     [Fact]
@@ -480,7 +480,7 @@ public class NetworkServiceTests
 
         // Assert
         Assert.NotNull(result);
-        Assert.IsType<Task<string>>(result);
+        Assert.IsAssignableFrom<Task<string>>(result);
     }
 
     [Fact]
@@ -491,7 +491,7 @@ public class NetworkServiceTests
 
         // Assert
         Assert.NotNull(result);
-        Assert.IsType<Task<string>>(result);
+        Assert.IsAssignableFrom<Task<string>>(result);
     }
 
     #endregion
