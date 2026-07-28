@@ -10,9 +10,9 @@ name: CodeQL
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
   schedule:
     # Weekly, so a newly published query still finds old code.
     - cron: "27 4 * * 1"
