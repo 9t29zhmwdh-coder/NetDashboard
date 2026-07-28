@@ -3,6 +3,16 @@
 All notable changes to NetDashboard will be documented here.
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.0.2] - 2026-07-28
+
+### Added
+
+- `.github/dependabot.yml`, with grouped weekly updates. The file was missing, and without it there are no version updates at all: repository security alerts only fire for disclosed vulnerabilities. Follows `engineering-standards` v0.10.0.
+
+### Fixed
+
+- Note: this is the only repository in the portfolio whose default branch is `master` rather than `main`. Left as is here, since renaming a default branch touches the ruleset, existing clones and every link that points at it.
+
 ## [1.0.1] - 2026-07-20
 
 ### Changed
