@@ -13,9 +13,26 @@
 
 [🇩🇪 Deutsche Version](README.de.md)
 
-A compact Windows desktop app (C#, WPF, .NET 8) that combines DNS diagnostics, mail server discovery, network connectivity checks, and system information in a single dark-themed interface; with full trilingual UI.
+**Answers "why is this domain's mail broken" in one window instead of six browser tabs.**
 
-Built for M365-connected infrastructure. Validates DNS and Exchange Online connectivity requirements aligned with [Microsoft 365 network connectivity principles](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-network-connectivity-principles).
+Mail is not arriving. So you check MX somewhere, SPF on another site, DKIM on
+a third, DMARC on a fourth, then repeat the lot against a second resolver
+because the first one might be serving something stale.
+
+NetDashboard does all of it at once: paste a domain, get the mail server, and
+see DNS, SPF, DKIM and DMARC checked across three public resolvers side by
+side. Connectivity checks and system information sit in the same window.
+
+Built against the [Microsoft 365 network connectivity
+principles](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-network-connectivity-principles),
+so the Exchange Online requirements are validated rather than looked up. UI in
+three languages.
+
+**Not for you if** you are comfortable with `dig` and `nslookup`. They do the
+same lookups and script better; this is for doing it repeatedly, quickly, with
+the results next to each other.
+
+Windows only: it is a WPF app and does not run elsewhere.
 
 > **How it runs:** NetDashboard is a native Windows desktop app (WPF), not a server and not a browser tool. It opens its own window like any installed program.
 
