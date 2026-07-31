@@ -3,6 +3,14 @@
 All notable changes to NetDashboard will be documented here.
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.0.6] - 2026-07-31
+
+### Changed
+
+- Both READMEs now open with the situation the tool collapses, which is checking MX, SPF, DKIM and DMARC across four sites and then repeating it against a second resolver, rather than listing the four areas the window covers. A short paragraph says that anyone comfortable with `dig` and `nslookup` gets the same answers and scripts them better, and the Windows-only constraint is now stated on the first screen instead of implied by a badge.
+
+---
+
 ## [1.0.5] - 2026-07-29
 
 ### Security

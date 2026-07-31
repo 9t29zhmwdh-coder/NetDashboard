@@ -5,11 +5,27 @@
 
 [🇬🇧 English Version](README.md)
 
-**Netzwerk- & Mail-Toolkit für Windows; C# · WPF · .NET 8**
+**Beantwortet "warum kommt bei dieser Domain keine Mail an" in einem Fenster statt in sechs Browser-Tabs.**
 
-NetDashboard ist ein kompaktes Windows-Werkzeug, das DNS-Abfragen, E-Mail-Server-Erkennung, Netzwerkdiagnose und Systeminformationen in einer einzigen Dark-Theme-Oberfläche vereint; mit vollständiger dreisprachiger UI.
+Mail kommt nicht an. Also prüfst du MX irgendwo, SPF auf einer anderen Seite,
+DKIM auf einer dritten, DMARC auf einer vierten, und danach das Ganze nochmal
+gegen einen zweiten Resolver, weil der erste veraltete Daten liefern könnte.
 
-Konzipiert für M365-verbundene Infrastrukturen. Validiert DNS- und Exchange Online-Konnektivitätsanforderungen gemäss den [Microsoft 365 Netzwerk-Konnektivitätsprinzipien](https://learn.microsoft.com/de-de/microsoft-365/enterprise/microsoft-365-network-connectivity-principles).
+NetDashboard macht das alles auf einmal: Domain einfügen, Mailserver
+bekommen, und DNS, SPF, DKIM und DMARC über drei öffentliche Resolver
+nebeneinander sehen. Konnektivitätsprüfungen und Systeminformationen liegen im
+selben Fenster.
+
+Gebaut gegen die [Microsoft 365
+Netzwerk-Konnektivitätsprinzipien](https://learn.microsoft.com/de-de/microsoft-365/enterprise/microsoft-365-network-connectivity-principles),
+die Exchange-Online-Anforderungen werden also geprüft und nicht nachgeschlagen.
+Oberfläche in drei Sprachen.
+
+**Nichts für dich, wenn** dir `dig` und `nslookup` vertraut sind. Die machen
+dieselben Abfragen und lassen sich besser skripten; das hier ist für den Fall,
+dass du es oft und schnell brauchst, mit den Ergebnissen nebeneinander.
+
+Nur Windows: es ist eine WPF-Anwendung und läuft nirgends sonst.
 
 [![CI](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/9t29zhmwdh-coder/NetDashboard/actions) [![CodeQL](https://github.com/9t29zhmwdh-coder/NetDashboard/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/9t29zhmwdh-coder/NetDashboard/security/code-scanning) [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/9t29zhmwdh-coder/NetDashboard/badge)](https://securityscorecards.dev/viewer/?uri=github.com/9t29zhmwdh-coder/NetDashboard) [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13694/badge)](https://www.bestpractices.dev/projects/13694)
 
