@@ -3,6 +3,14 @@
 All notable changes to NetDashboard will be documented here.
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.0.8] - 2026-09-25
+
+### Security
+
+- The release workflow no longer pastes the manual `version` input into its PowerShell script. It reaches the script through an environment variable, and anything but a plain version number (`1.2.3` or `1.2.3-rc.1`) stops the build, because later steps put the version into command lines.
+
+---
+
 ## [1.0.7] - 2026-08-01
 
 ### Fixed
