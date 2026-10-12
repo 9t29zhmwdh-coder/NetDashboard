@@ -3,6 +3,17 @@
 All notable changes to NetDashboard will be documented here.
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.0.12] - 2026-10-12
+
+### Changed
+
+Dependency and CI updates merged since v1.0.11, each with green checks:
+
+- chore(deps): Bump the nuget group with 2 updates (#50)
+- chore(ci): Bump the actions group with 4 updates (#51)
+
+---
+
 ## [1.0.11] - 2026-10-11
 
 ### Fixed
